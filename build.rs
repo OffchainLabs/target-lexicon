@@ -44,6 +44,7 @@ use self::targets::Vendor;
 use self::triple::Triple;
 
 fn main() {
+    println!("cargo:rustc-check-cfg=cfg(feature, values(\"rust_1_40\", \"cargo-clippy\"))");
     let out_dir = PathBuf::from(
         env::var_os("OUT_DIR").expect("The OUT_DIR environment variable must be set"),
     );
